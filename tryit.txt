@@ -1,0 +1,168 @@
+Option Compare Database
+
+#Const anDebugEnabled = 1
+
+Public Sub anMsg(msg As String)
+    #If anDebugEnabled Then
+        Debug.Print "=> " & msg
+    #End If
+End Sub
+
+Public Function LastDataCellOfAColumn(ARangeOfASingleColumn As Excel.Range, ParentWS As Excel.Worksheet) As Excel.Range
+    Set LastDataCellOfAColumn = ParentWS.Cells(ParentWS.Rows.Count, ARangeOfASingleColumn.Column).End(xlUp)
+End Function
+
+Public Function LastDataCellOfARow(ARangeOfASingleRow As Excel.Range, ParentWS As Excel.Worksheet) As Excel.Range
+    Set LastDataCellOfARow = ParentWS.Cells(ARangeOfASingleRow.Row, ParentWS.Columns.Count).End(xlToLeft)
+End Function
+
+Public Function FirstDataRowNumberWithSomeAdjacentBoldCells(ExcelWS As Excel.Worksheet, QuantityOfAdjacentBoldCells As Integer) As Integer
+    Dim i As Integer
+    Dim j As Integer
+    For i = 1 To LastDataCellOfAColumn(ExcelWS.Columns(1), ExcelWS).Row Step 1
+        If ExcelWS.Cells(i, 1).Font.Bold = True Then
+            For j = 2 To QuantityOfAdjacentBoldCells Step 1
+                If ExcelWS.Cells(i, j).Font.Bold = False Then
+                    Exit For
+                End If
+            Next
+            If j > QuantityOfAdjacentBoldCells Then
+                FirstDataRowNumberWithSomeAdjacentBoldCells = i
+                Exit Function
+            End If
+        End If
+    Next
+    FirstDataRowNumberWithSomeAdjacentBoldCells = -1
+End Function
+
+Public Function FirstDataCellToRightToDown(SearchRng As Excel.Range, CellValue As Variant) As Excel.Range
+    Set FirstDataCellToRightToDown = SearchRng.Find(What:=CellValue, LookIn:=xlValues, _
+                                                    LookAt:=xlWhole, SearchOrder:=xlByRows, _
+                                                    SearchDirection:=xlNext, _
+                                                    MatchCase:=True)
+End Function
+
+Public Sub sourceODCDB()
+    anMsg "Enter sourceODCDB"
+    Dim odcDB As DAO.Database
+
+    Const srcTbl1Name As String = "srcARreport"
+    Const srcTbl2Name As String = "srcEngRvwList"
+    
+    Set odcDB = Application.CurrentDb
+    
+    'Delete tables, but ignore the error if the tables doesn't exist
+    anMsg "Delete old source tables"
+    On Error Resume Next
+        odcDB.TableDefs.Delete srcTbl1Name
+    On Error GoTo 0
+    On Error Resume Next
+        odcDB.TableDefs.Delete srcTbl2Name
+    On Error GoTo 0
+    
+    anMsg "Clear The 2 Source Tables"
+    DoCmd.SetWarnings False
+    DoCmd.RunSQL "DELETE * FROM [" & srcTbl1Name & "]"
+    DoCmd.RunSQL "DELETE * FROM [" & srcTbl2Name & "]"
+    DoCmd.SetWarnings True
+    
+    'Import tables from excel files
+    anMsg "Import new source tables"
+    DoCmd.TransferSpreadsheet acImport, acSpreadsheetTypeExcel12, srcTbl1Name, Application.CurrentProject.Path & "\AR_Report.xlsx", True, "ARs$A6:AI32767"
+    DoCmd.TransferSpreadsheet acImport, acSpreadsheetTypeExcel8, srcTbl2Name, Application.CurrentProject.Path & "\ENG_RVW Priority Report.xls", True
+    
+    anMsg "Leave sourceODCDB"
+    odcDB.Close
+    Set odcDB = Nothing
+End Sub
+
+Private Sub Command0_Click()
+
+    anMsg "Start Reading The 2 Source Excel Files"
+    
+    Dim xlApp As New Excel.Application
+    Dim ARreportWB As Excel.Workbook
+    Dim ARreport As Excel.Worksheet
+    Dim EngRvwListWB As Excel.Workbook
+    Dim EngRvwList As Excel.Worksheet
+    Set ARreportWB = xlApp.Workbooks.Open(Application.CurrentProject.Path & "\AR_Report.xlsx", , True, , , , True, , , False, False, , False)
+    Set ARreport = ARreportWB.Worksheets(1)
+    Set EngRvwListWB = xlApp.Workbooks.Open(Application.CurrentProject.Path & "\ENG_RVW Priority Report.xls", , True, , , , True, , , False, False, , False)
+    Set EngRvwList = EngRvwListWB.Worksheets(1)
+    
+    Dim TmpRng As Excel.Range
+    
+    anMsg "Reference Necessary Fields In ARreport"
+    
+    Dim ARreportHeaderRowNumber As Integer
+    ARreportHeaderRowNumber = FirstDataRowNumberWithSomeAdjacentBoldCells(ARreport, Fix((ARreport.UsedRange.Columns.Count + 1) / 3))
+    If ARreportHeaderRowNumber <= 0 Then
+        GoTo ARreportUnableToParseHeader
+    End If
+    Set TmpRng = ARreport.Range(ARreport.Cells(ARreportHeaderRowNumber, 1), LastDataCellOfARow(ARreport.Rows(ARreportHeaderRowNumber), ARreport))
+    
+    Dim ARreportFirstRecordIndex As Integer
+    ARreportFirstRecordIndex = ARreportHeaderRowNumber + 1
+    Dim ARreportLastRecordIndex As Integer
+    ARreportLastRecordIndex = LastDataCellOfAColumn(ARreport.Columns(TmpRng.Find("ARID").Column), ARreport).Row
+    
+    Dim ARcol As New Collection
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("<>").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="ID"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("ARID").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="ARID"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Problem statement").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="ProblemStatement"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Owner").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="AROwner"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Target date").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="TargetDate"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Last act. date").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="LastActiveDate"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Status").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="Status"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Approver").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="ARApprover"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Open date").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="OpenDate"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Date closed").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="CloseDate"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Last mod. time").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="LastModDate"
+    ARcol.Add Item:=ARreport.Columns(TmpRng.Find("Detailed description").Column).Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex), _
+                Key:="DetailedDescription"
+                
+    anMsg "Reference Necessary Fields In EngRvwList"
+                
+    Dim EngRvwListHeaderRowNumber As Integer
+    EngRvwListHeaderRowNumber = FirstDataRowNumberWithSomeAdjacentBoldCells(EngRvwList, Fix((EngRvwList.UsedRange.Columns.Count + 1) / 3))
+    If EngRvwListHeaderRowNumber <= 0 Then
+        GoTo EngRvwListUnableToParseHeader
+    End If
+    Set TmpRng = EngRvwList.Range(EngRvwList.Cells(EngRvwListHeaderRowNumber, 1), LastDataCellOfARow(EngRvwList.Rows(EngRvwListHeaderRowNumber), EngRvwList))
+    
+    Dim EngRvwListFirstRecordIndex As Integer
+    EngRvwListFirstRecordIndex = EngRvwListHeaderRowNumber + 1
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    anMsg "Finish Reading The 2 Source Excel Files"
+    ARreportWB.Close SaveChanges:=False
+    EngRvwListWB.Close SaveChanges:=False
+    xlApp.Quit
+    Set ARreport = Nothing
+    Set ARreportWB = Nothing
+    Set EngRvwList = Nothing
+    Set EngRvwListWB = Nothing
+    Set xlApp = Nothing
+    Exit Sub
+ARreportUnableToParseHeader:
+    MsgBox ("ENDD")
+EngRvwListUnableToParseHeader:
+End Sub
