@@ -1,0 +1,16 @@
+Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARs WHERE ARID='" & tmpStr & "';", dbOpenSnapshot)
+            If tmpRs.EOF Then
+                MsgBox "INSERT INTO ARs (ARID ProblemStatement AROwnersID TargetDate LastActiveDate ARStatusID ARApproversID OpenDate CloseDate LastModDate DetailedDescription RecordLastModTime) " _
+                                & "VALUES ('" & tmpStr _
+                                & "','" & CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value) _
+                                & "'," & tmpInt1 _
+                                & "," & tmpSqlValStr(1) _
+                                & "," & tmpSqlValStr(2) _
+                                & "," & idStatus.Item(Trim(CStr(ARcol.Item("Status").Range("A" & nowRowNum).Value))) _
+                                & "," & tmpInt2 _
+                                & "," & tmpSqlValStr(3) _
+                                & "," & tmpSqlValStr(4) _
+                                & "," & tmpSqlValStr(5) _
+                                & ",'" & CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value) _
+                                & "',Now());" ', dbFailOnError
+            End If
