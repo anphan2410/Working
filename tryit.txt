@@ -316,74 +316,42 @@ Public Sub nowDbExecSQL(sqlStatement As String, Optional DAOCurrentDbExecuteOpti
     Application.CurrentDb.Execute sqlStatement, DAOCurrentDbExecuteOption
 End Sub
 
-Public Function sqlValueString(Value As Variant, Optional UserDefinedValueType As String = "NO") As String
-    Dim ValueStr As String
-    
-    Dim inputVarType As VbVarType
-    inputVarType = VarType(Value)
-    If inputVarType > 1 And inputVarType < 9 Then
-        ValueStr = CStr(Value)
-    Else
-        Exit Function
-    End If
-    
-    Dim userDefVarType As String
-    userDefVarType = UCase(UserDefinedValueType)
-    If userDefVarType = "NO" Or userDefVarType = "FALSE" Then   'User has a value with its programmatically standard format
-        If inputVarType = 7 Then
-            ValueStr = "#" & ValueStr & "#"
-        ElseIf inputVarType = 8 Then
-            ValueStr = "'" & ValueStr & "'"
-        End If
-    'Value is a string, and user has involved in a format of the value string
-    ElseIf userDefVarType = "NUMBER" Then
-        'Do Nothing
-    ElseIf userDefVarType = "TEXT" Or userDefVarType = "TXT" Then
-        ValueStr = "'" & Replace(ValueStr, "'", "''") & "'"
-    ElseIf userDefVarType = "DATE" Or userDefVarType = "TIME" Or userDefVarType = "DATE/TIME" Then
-        ValueStr = "#" & ValueStr & "#"
-    Else
-        If Not (userDefVarType = "YES" Or userDefVarType = "TRUE") Then
-            Exit Function
-        End If
-    End If
-    
-    'Check If Value Is Empty
-    If (ValueStr = "") Or (ValueStr = "''") Or (ValueStr = "##") Then
-        ValueStr = "NULL"
-    End If
-    sqlValueString = ValueStr
-End Function
-
-Public Function sqlFieldExpression(Field As String, OperationSymbol As String, Value As Variant, Optional UserDefinedValueType As String = "NO") As String
-    If Field = "" Then
-        Exit Function
-    End If
-    'Prepare ValueStr
-    Dim ValueStr As String
-    If UserDefinedValueType = "" Or UserDefinedValueType = "NULL" Then
-        ValueStr = CStr(Value)
-    Else
-        ValueStr = sqlValueString(Value, UserDefinedValueType)
-        If ValueStr = "" Then
-            Exit Function
-        End If
-    End If
-    
-    'Make sqlFieldExpression
-    Select Case OperationSymbol
-        Case "=":
-            sqlFieldExpression = Field & OperationSymbol & ValueStr
-        Case "<>":
-            If ValueStr = "NULL" Then
-                sqlFieldExpression = Field & " IS NOT NULL"
-            Else
-                sqlFieldExpression = Field & " IS NULL OR " & Field & OperationSymbol & ValueStr
+Public Function sqlVal(Value As Variant, Optional UserDefinedValueType As VbVarType = 0) As String
+    '2=vbInteger, 3=vbLong, 4=vbSingle, 5=vbDouble, 7=vbDate, 8=vbString, 36=vbUserDefinedType
+    'Here If UserDefinedValueType = 36, It Is Simply Mean To Simply ByPass Wrapping Operation
+    Select Case IIf(UserDefinedValueType = 0, VarType(Value), UserDefinedValueType)
+        Case 2 To 5, 36:
+            sqlVal = Value
+            If sqlVal = "" Then
+                sqlVal = "NULL"
+                Exit Function
             End If
+            Exit Function
+        Case 7:
+            sqlVal = Value
+            If sqlVal = "" Then
+                sqlVal = "NULL"
+                Exit Function
+            End If
+            sqlVal = "#" & sqlVal & "#"
+            Exit Function
+        Case 8:
+            sqlVal = Value
+            If sqlVal = "" Then
+                sqlVal = "NULL"
+                Exit Function
+            End If
+            sqlVal = "'" & Replace(sqlVal, "'", "''") & "'"
+            Exit Function
         Case Else:
             Exit Function
     End Select
 End Function
+
+Public Function sqlNotEqExpr(Field As String, sqlValue As String) As String
+    sqlNotEqExpr = Field & " IS NULL OR " & Field & "<>" & sqlValue
+End Function
+
 
 Public Sub sourceODCDB()
     anInfo "Enter sourceODCDB"
@@ -597,6 +565,7 @@ Private Sub Command0_Click()
                 MsgBox "Notice: Missing AROwner At " & ARcol.Item("AROwner").Range("A" & nowRowNum).Address & " In AR Report"
                 GoTo ContinueToNextARID
             End If
+            tmpStr = sqlVal(tmpStr, vbString)
             'Parse KTDomainUserName
             tmpStr1 = ""
             If UBound(tmpSplit) = 1 Then
@@ -607,8 +576,7 @@ Private Sub Command0_Click()
                     tmpStr1 = ""
                 End If
             End If
-            tmpStr = sqlValueString(tmpStr, "TEXT")
-            tmpStr1 = sqlValueString(tmpStr1, "TEXT")
+            tmpStr1 = sqlVal(tmpStr1, vbString)
             Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             If tmpRs.EOF Then
                 odcDB.Execute "INSERT INTO Persons (FullName,KTDomainUserName,RecordLastModTime) VALUES (" & tmpStr _
@@ -616,7 +584,7 @@ Private Sub Command0_Click()
                 Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             Else
                 odcDB.Execute "UPDATE Persons SET KTDomainUserName=" & tmpStr1 & ",RecordLastModTime=Now() WHERE FullName=" & tmpStr _
-                                    & " AND (" & sqlFieldExpression("KTDomainUserName", "<>", tmpStr1, "NULL") & ");", dbFailOnError
+                                    & " AND (" & sqlNotEqExpr("KTDomainUserName", tmpStr1) & ");", dbFailOnError
             End If
             tmpInt = tmpRs!PersonsID
             'Update Table AROwners
@@ -636,6 +604,7 @@ Private Sub Command0_Click()
                 MsgBox "Notice: Missing ARApprover At " & ARcol.Item("ARApprover").Range("A" & nowRowNum).Address & " In AR Report"
                 GoTo ContinueToNextARID
             End If
+            tmpStr = sqlVal(tmpStr, vbString)
             'Parse KTDomainUserName
             tmpStr1 = ""
             If UBound(tmpSplit) = 1 Then
@@ -646,8 +615,7 @@ Private Sub Command0_Click()
                     tmpStr1 = ""
                 End If
             End If
-            tmpStr = sqlValueString(tmpStr, "TEXT")
-            tmpStr1 = sqlValueString(tmpStr1, "TEXT")
+            tmpStr1 = sqlVal(tmpStr1, vbString)
             Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             If tmpRs.EOF Then
                 odcDB.Execute "INSERT INTO Persons (FullName,KTDomainUserName,RecordLastModTime) VALUES (" & tmpStr _
@@ -655,7 +623,7 @@ Private Sub Command0_Click()
                 Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             Else
                 odcDB.Execute "UPDATE Persons SET KTDomainUserName=" & tmpStr1 & ",RecordLastModTime=Now() WHERE FullName=" & tmpStr _
-                                    & " AND (" & sqlFieldExpression("KTDomainUserName", "<>", tmpStr1, "NULL") & ");", dbFailOnError
+                                    & " AND (" & sqlNotEqExpr("KTDomainUserName", tmpStr1) & ");", dbFailOnError
             End If
             tmpInt = tmpRs!PersonsID
             'Update Table ARApprovers
@@ -668,7 +636,7 @@ Private Sub Command0_Click()
             tmpInt2 = tmpRs!ARApproversID
             '=================================================================
             'Update Table ARs According To ARreport
-            tmpStr = sqlValueString(Trim(CStr(tmpRng.Value)), "TEXT")
+            tmpStr = sqlVal(Trim(CStr(tmpRng.Value)), vbString)
             'Validate Date Extracted From ARreport
             tmpSqlValStr(1) = Trim(CStr(ARcol.Item("TargetDate").Range("A" & nowRowNum).Value))
             tmpSqlValStr(2) = Trim(CStr(ARcol.Item("LastActiveDate").Range("A" & nowRowNum).Value))
@@ -684,7 +652,7 @@ Private Sub Command0_Click()
             Next
             Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARs WHERE ARID=" & tmpStr & ";", dbOpenSnapshot)
             If tmpRs.EOF Then
-                tmpStr1 = sqlValueString(CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value), "TEXT")
+                tmpStr1 = sqlVal(CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value), vbString)
                 odcDB.Execute "INSERT INTO ARs (ARID,ProblemStatement,AROwnersID,TargetDate,LastActiveDate,ARStatusID,ARApproversID,OpenDate,CloseDate,LastModDate,DetailedDescription,ARTypesID,RecordLastModTime) " _
                                 & "VALUES (" & tmpStr _
                                 & "," & tmpStr1 _
@@ -696,41 +664,41 @@ Private Sub Command0_Click()
                                 & "," & tmpSqlValStr(3) _
                                 & "," & tmpSqlValStr(4) _
                                 & "," & tmpSqlValStr(5) _
-                                & "," & sqlValueString(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), "TEXT") _
+                                & "," & sqlVal(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), vbString) _
                                 & "," & idType.Item(Classify(tmpVar, tmpStr1, 1, vbTextCompare)) _
                                 & ",Now());", dbFailOnError
             Else
                 tmpStr1 = CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value)
                 If tmpStr1 <> tmpRs!ProblemStatement Then
-                    odcDB.Execute "UPDATE ARs SET " & sqlFieldExpression("ARTypesID", "=", idType.Item(Classify(tmpVar, tmpStr1, 1, vbTextCompare)), "NULL") _
+                    odcDB.Execute "UPDATE ARs SET ARTypesID=" & idType.Item(Classify(tmpVar, tmpStr1, 1, vbTextCompare)) _
                                     & " WHERE ARID=" & tmpStr & ";", dbFailOnError
                 End If
-                tmpStr1 = sqlValueString(tmpStr1, "TEXT")
+                tmpStr1 = sqlVal(tmpStr1, vbString)
                 tmpStr2 = Trim(CStr(ARcol.Item("Status").Range("A" & nowRowNum).Value))
-                tmpStr3 = sqlValueString(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), "TEXT")
+                tmpStr3 = sqlVal(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), vbString)
                 odcDB.Execute "UPDATE ARs " _
-                                & "SET " & sqlFieldExpression("ProblemStatement", "=", tmpStr1, "NULL") _
-                                & "," & sqlFieldExpression("AROwnersID", "=", tmpInt1, "NULL") _
-                                & "," & sqlFieldExpression("TargetDate", "=", tmpSqlValStr(1), "NULL") _
-                                & "," & sqlFieldExpression("LastActiveDate", "=", tmpSqlValStr(2), "NULL") _
-                                & "," & sqlFieldExpression("ARStatusID", "=", idStatus.Item(tmpStr2), "NULL") _
-                                & "," & sqlFieldExpression("ARApproversID", "=", tmpInt2, "NULL") _
-                                & "," & sqlFieldExpression("OpenDate", "=", tmpSqlValStr(3), "NULL") _
-                                & "," & sqlFieldExpression("CloseDate", "=", tmpSqlValStr(4), "NULL") _
-                                & "," & sqlFieldExpression("LastModDate", "=", tmpSqlValStr(5), "NULL") _
-                                & "," & sqlFieldExpression("DetailedDescription", "=", tmpStr3, "NULL") _
+                                & "SET ProblemStatement=" & tmpStr1 _
+                                & ",AROwnersID=" & tmpInt1 _
+                                & ",TargetDate=" & tmpSqlValStr(1) _
+                                & ",LastActiveDate=" & tmpSqlValStr(2) _
+                                & ",ARStatusID=" & idStatus.Item(tmpStr2) _
+                                & ",ARApproversID=" & tmpInt2 _
+                                & ",OpenDate=" & tmpSqlValStr(3) _
+                                & ",CloseDate=" & tmpSqlValStr(4) _
+                                & ",LastModDate=" & tmpSqlValStr(5) _
+                                & ",DetailedDescription=" & tmpStr3 _
                                 & ",RecordLastModTime=Now() " _
                                 & "WHERE ARID=" & tmpStr _
-                                & " AND (" & sqlFieldExpression("ProblemStatement", "<>", tmpStr1, "NULL") _
-                                & " OR " & sqlFieldExpression("AROwnersID", "<>", tmpInt1, "NULL") _
-                                & " OR " & sqlFieldExpression("TargetDate", "<>", tmpSqlValStr(1), "NULL") _
-                                & " OR " & sqlFieldExpression("LastActiveDate", "<>", tmpSqlValStr(2), "NULL") _
-                                & " OR " & sqlFieldExpression("ARStatusID", "<>", idStatus.Item(tmpStr2), "NULL") _
-                                & " OR " & sqlFieldExpression("ARApproversID", "<>", tmpInt2, "NULL") _
-                                & " OR " & sqlFieldExpression("OpenDate", "<>", tmpSqlValStr(3), "NULL") _
-                                & " OR " & sqlFieldExpression("CloseDate", "<>", tmpSqlValStr(4), "NULL") _
-                                & " OR " & sqlFieldExpression("LastModDate", "<>", tmpSqlValStr(5), "NULL") _
-                                & " OR " & sqlFieldExpression("DetailedDescription", "<>", tmpStr3, "NULL") _
+                                & " AND (" & sqlNotEqExpr("ProblemStatement", tmpStr1) _
+                                & " OR " & sqlNotEqExpr("AROwnersID", CStr(tmpInt1)) _
+                                & " OR " & sqlNotEqExpr("TargetDate", tmpSqlValStr(1)) _
+                                & " OR " & sqlNotEqExpr("LastActiveDate", tmpSqlValStr(2)) _
+                                & " OR " & sqlNotEqExpr("ARStatusID", idStatus.Item(tmpStr2)) _
+                                & " OR " & sqlNotEqExpr("ARApproversID", CStr(tmpInt2)) _
+                                & " OR " & sqlNotEqExpr("OpenDate", tmpSqlValStr(3)) _
+                                & " OR " & sqlNotEqExpr("CloseDate", tmpSqlValStr(4)) _
+                                & " OR " & sqlNotEqExpr("LastModDate", tmpSqlValStr(5)) _
+                                & " OR " & sqlNotEqExpr("DetailedDescription", tmpStr3) _
                                 & ");", dbFailOnError
             End If
         Else
@@ -751,25 +719,25 @@ ContinueToNextARID:
                                                 MatchCase:=False)
         If Not tmpRng Is Nothing Then
             nowRowNum = tmpRng.Row
-            tmpStr1 = sqlValueString(CStr(ERcol.Item("PrimePartNumber").Range("A" & nowRowNum).Value), "TEXT")
-            tmpStr2 = sqlValueString(CStr(ERcol.Item("PrimePartDescription").Range("A" & nowRowNum).Value), "TEXT")
-            tmpSqlValStr(1) = sqlValueString(Trim(CStr(ERcol.Item("Rank").Range("A" & nowRowNum).Value)), "NUMBER")
-            tmpSqlValStr(2) = sqlValueString(Trim(CStr(ERcol.Item("12MonthDemand").Range("A" & nowRowNum).Value)), "NUMBER")
-            tmpSqlValStr(3) = sqlValueString(Trim(CStr(ERcol.Item("MonthOfSupply").Range("A" & nowRowNum).Value)), "NUMBER")
-            tmpSqlValStr(4) = sqlValueString(Trim(CStr(ERcol.Item("OnHandGood").Range("A" & nowRowNum).Value)), "NUMBER")
-            nowDbExecSQL "UPDATE ARs SET " & sqlFieldExpression("Rank", "=", tmpSqlValStr(1), "NULL") _
-                            & "," & sqlFieldExpression("PrimePartNumber", "=", tmpStr1, "NULL") _
-                            & "," & sqlFieldExpression("PrimePartDescription", "=", tmpStr2, "NULL") _
-                            & "," & sqlFieldExpression("[12MonthDemand]", "=", tmpSqlValStr(2), "NULL") _
-                            & "," & sqlFieldExpression("MonthOfSupply", "=", tmpSqlValStr(3), "NULL") _
-                            & "," & sqlFieldExpression("OnHandGood", "=", tmpSqlValStr(4), "NULL") _
-                            & ",RecordLastModTime=Now() WHERE " & sqlFieldExpression("ARID", "=", tmpStr, "TEXT") _
-                            & " AND (" & sqlFieldExpression("Rank", "<>", tmpSqlValStr(1), "NULL") _
-                            & " OR " & sqlFieldExpression("PrimePartNumber", "<>", tmpStr1, "NULL") _
-                            & " OR " & sqlFieldExpression("PrimePartDescription", "<>", tmpStr2, "NULL") _
-                            & " OR " & sqlFieldExpression("[12MonthDemand]", "<>", tmpSqlValStr(2), "NULL") _
-                            & " OR " & sqlFieldExpression("MonthOfSupply", "<>", tmpSqlValStr(3), "NULL") _
-                            & " OR " & sqlFieldExpression("OnHandGood", "<>", tmpSqlValStr(4), "NULL") _
+            tmpStr1 = sqlVal(CStr(ERcol.Item("PrimePartNumber").Range("A" & nowRowNum).Value), vbString)
+            tmpStr2 = sqlVal(CStr(ERcol.Item("PrimePartDescription").Range("A" & nowRowNum).Value), vbString)
+            tmpSqlValStr(1) = sqlVal(Trim(CStr(ERcol.Item("Rank").Range("A" & nowRowNum).Value)), vbInteger)
+            tmpSqlValStr(2) = sqlVal(Trim(CStr(ERcol.Item("12MonthDemand").Range("A" & nowRowNum).Value)), vbInteger)
+            tmpSqlValStr(3) = sqlVal(Trim(CStr(ERcol.Item("MonthOfSupply").Range("A" & nowRowNum).Value)), vbSingle)
+            tmpSqlValStr(4) = sqlVal(Trim(CStr(ERcol.Item("OnHandGood").Range("A" & nowRowNum).Value)), vbInteger)
+            nowDbExecSQL "UPDATE ARs SET Rank=" & tmpSqlValStr(1) _
+                            & ",PrimePartNumber=" & tmpStr1 _
+                            & ",PrimePartDescription=" & tmpStr2 _
+                            & ",[12MonthDemand]=" & tmpSqlValStr(2) _
+                            & ",MonthOfSupply=" & tmpSqlValStr(3) _
+                            & ",OnHandGood=" & tmpSqlValStr(4) _
+                            & ",RecordLastModTime=Now() WHERE ARID=" & sqlVal(tmpStr, vbString) _
+                            & " AND (" & sqlNotEqExpr("Rank", tmpSqlValStr(1)) _
+                            & " OR " & sqlNotEqExpr("PrimePartNumber", tmpStr1) _
+                            & " OR " & sqlNotEqExpr("PrimePartDescription", tmpStr2) _
+                            & " OR " & sqlNotEqExpr("[12MonthDemand]", tmpSqlValStr(2)) _
+                            & " OR " & sqlNotEqExpr("MonthOfSupply", tmpSqlValStr(3)) _
+                            & " OR " & sqlNotEqExpr("OnHandGood", tmpSqlValStr(4)) _
                             & ");", dbFailOnError
         End If
         tmpRs.MoveNext
@@ -805,5 +773,5 @@ UninitializedTableARStatus:
 End Sub
 
 Private Sub Command1_Click()
-
+    MsgBox sqlVal("", vbString)
 End Sub

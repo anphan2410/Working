@@ -4,6 +4,12 @@ Option Compare Database
 
 Public Sub anMsg(msg As String)
     #If anDebugEnabled Then
+        Debug.Print msg
+    #End If
+End Sub
+
+Public Sub anInfo(msg As String)
+    #If anDebugEnabled Then
         Debug.Print "=> " & msg
     #End If
 End Sub
@@ -35,12 +41,6 @@ Public Function FirstDataRowNumberWithSomeAdjacentBoldCells(ExcelWS As Excel.Wor
     FirstDataRowNumberWithSomeAdjacentBoldCells = -1
 End Function
 
-Public Function FirstDataCellToRightToDown(SearchRng As Excel.Range, CellValue As Variant) As Excel.Range
-    Set FirstDataCellToRightToDown = SearchRng.Find(What:=CellValue, LookIn:=xlValues, _
-                                                    LookAt:=xlWhole, SearchOrder:=xlByRows, _
-                                                    SearchDirection:=xlNext, _
-                                                    MatchCase:=True)
-End Function
 
 Public Function Get1stIndInInt(ByVal myInt As Integer, ByRef myIntArr() As Integer) As Integer
     Dim i As Integer
@@ -213,7 +213,7 @@ Public Function DictGen(RawDict As Variant) As Variant
 'Will generate a Dictionary equivalently to the following command: (this just used for imagination of the result)
 'DictGen=Array(Array("OBS","CIP","DOC"),Array(8,2,2),New Collection{"OBS-Obsolescence-PN","OBS-Obsolescence--PN", ..., "HD -- PN"})
     Dim Sen As Variant
-    Dim TmpStr As String
+    Dim tmpStr As String
     Dim i As Integer
     Dim j As Integer
     Dim k As Integer
@@ -242,18 +242,18 @@ Public Function DictGen(RawDict As Variant) As Variant
         Next
         SenRng(i) = k
         For j = 0 To k - 1
-            TmpStr = ""
+            tmpStr = ""
             WordInd = NumBase(WordMax, j)
             For k = 1 To UBound(RawDict(i))
-                TmpStr = TmpStr & CStr(RawDict(i)(k)(WordInd(k - 1)))
+                tmpStr = tmpStr & CStr(RawDict(i)(k)(WordInd(k - 1)))
             Next
-            Output.Add (TmpStr)
+            Output.Add (tmpStr)
         Next
     Next
     DictGen = Array(SenName, SenRng, Output)
 End Function
 
-Public Function Classify(Dict As Variant, Str As String, Optional Mode As Integer = 0, Optional compareMode As VbCompareMethod = vbBinaryCompare) As String
+Public Function Classify(Dict As Variant, str As String, Optional Mode As Integer = 0, Optional compareMode As VbCompareMethod = vbBinaryCompare) As String
 'This function returns a string that represents a best-guess matched NameString of the given Str based on Dict (dictionary)
 'This function is recommended to be used after having a Dict generated from the function DictGen, please find and read
 'In case someone needs to directly define a Dict, a Dict must follow the format: an array of three different variables: _
@@ -266,16 +266,16 @@ Public Function Classify(Dict As Variant, Str As String, Optional Mode As Intege
     Dim k As Integer
     If Mode = 0 Then
         Dim Tmp As String
-        Tmp = Classify(Dict, Str, 1)
+        Tmp = Classify(Dict, str, 1)
         If Tmp <> "" Then
             Classify = Tmp
             Exit Function
         Else
-            Classify = Classify(Dict, Str, 2)
+            Classify = Classify(Dict, str, 2)
         End If
     ElseIf Mode = 1 Then
         For i = 1 To Dict(2).Count
-            If InStr(1, Str, Dict(2).Item(i), compareMode) > 0 Then
+            If InStr(1, str, Dict(2).Item(i), compareMode) > 0 Then
                 k = 0
                 For j = 0 To UBound(Dict(1))
                     k = k + Dict(1)(j)
@@ -291,7 +291,7 @@ Public Function Classify(Dict As Variant, Str As String, Optional Mode As Intege
         Dim m As Double
         Dim n As Double
         For j = 1 To Dict(2).Count
-            n = ExistFreq(Dict(2).Item(j), Str, compareMode)
+            n = ExistFreq(Dict(2).Item(j), str, compareMode)
             If n > m Then
                 m = n
                 k = j
@@ -309,8 +309,52 @@ Public Function Classify(Dict As Variant, Str As String, Optional Mode As Intege
     End If
 End Function
 
+Public Sub nowDbExecSQL(sqlStatement As String, Optional DAOCurrentDbExecuteOption As RecordsetOptionEnum = dbFailOnError)
+    anMsg "_________________________________________________________________________________________________" & Chr(10)
+    anMsg sqlStatement
+    anMsg "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" & Chr(10)
+    Application.CurrentDb.Execute sqlStatement, DAOCurrentDbExecuteOption
+End Sub
+
+Public Function sqlVal(Value As Variant, Optional UserDefinedValueType As VbVarType = 0) As String
+    '2=vbInteger, 3=vbLong, 4=vbSingle, 5=vbDouble, 7=vbDate, 8=vbString, 36=vbUserDefinedType
+    'Here If UserDefinedValueType = 36, It Is Simply Mean To Simply ByPass Wrapping Operation
+    Select Case IIf(UserDefinedValueType = 0, VarType(Value), UserDefinedValueType)
+        Case 2 To 5, 36:
+            sqlVal = Value
+            If sqlVal = "" Then
+                sqlVal = "NULL"
+                Exit Function
+            End If
+            Exit Function
+        Case 7:
+            sqlVal = Value
+            If sqlVal = "" Then
+                sqlVal = "NULL"
+                Exit Function
+            End If
+            sqlVal = "#" & sqlVal & "#"
+            Exit Function
+        Case 8:
+            sqlVal = Value
+            If sqlVal = "" Then
+                sqlVal = "NULL"
+                Exit Function
+            End If
+            sqlVal = "'" & Replace(sqlVal, "'", "''") & "'"
+            Exit Function
+        Case Else:
+            Exit Function
+    End Select
+End Function
+
+Public Function sqlNotEqExpr(Field As String, sqlValue As String) As String
+    sqlNotEqExpr = Field & " IS NULL OR " & Field & "<>" & sqlValue
+End Function
+
+
 Public Sub sourceODCDB()
-    anMsg "Enter sourceODCDB"
+    anInfo "Enter sourceODCDB"
     Dim odcDB As DAO.Database
 
     Const srcTbl1Name As String = "srcARreport"
@@ -319,7 +363,7 @@ Public Sub sourceODCDB()
     Set odcDB = Application.CurrentDb
     
     'Delete tables, but ignore the error if the tables doesn't exist
-    anMsg "Delete old source tables"
+    anInfo "Delete old source tables"
     On Error Resume Next
         odcDB.TableDefs.Delete srcTbl1Name
     On Error GoTo 0
@@ -327,25 +371,25 @@ Public Sub sourceODCDB()
         odcDB.TableDefs.Delete srcTbl2Name
     On Error GoTo 0
     
-    anMsg "Clear The 2 Source Tables"
-    DoCmd.SetWarnings False
+    anInfo "Clear The 2 Source Tables"
+    'DoCmd.SetNotices False
     DoCmd.RunSQL "DELETE * FROM [" & srcTbl1Name & "]"
     DoCmd.RunSQL "DELETE * FROM [" & srcTbl2Name & "]"
-    DoCmd.SetWarnings True
+    'DoCmd.SetNotices True
     
     'Import tables from excel files
-    anMsg "Import new source tables"
+    anInfo "Import new source tables"
     DoCmd.TransferSpreadsheet acImport, acSpreadsheetTypeExcel12, srcTbl1Name, Application.CurrentProject.Path & "\AR_Report.xlsx", True, "ARs$A6:AI32767"
     DoCmd.TransferSpreadsheet acImport, acSpreadsheetTypeExcel8, srcTbl2Name, Application.CurrentProject.Path & "\ENG_RVW Priority Report.xls", True
     
-    anMsg "Leave sourceODCDB"
+    anInfo "Leave sourceODCDB"
     odcDB.Close
     Set odcDB = Nothing
 End Sub
 
 Private Sub Command0_Click()
     
-    anMsg "Start Reading The 2 Source Excel Files"
+    anInfo "Start Reading The 2 Source Excel Files"
     
     Dim ARreportFilePath As String
     ARreportFilePath = Application.CurrentProject.Path & "\AR_Report.xlsx"
@@ -372,13 +416,13 @@ Private Sub Command0_Click()
     End If
     'Notify User
     If EngRvwList Is Nothing Then
-        MsgBox "Unable To Read The File Eng Rvw List At" & Chr(10) & Chr(9) & EngRvwListFilePath
+        MsgBox "Unable To Read The File EngRvw List At" & Chr(10) & Chr(9) & EngRvwListFilePath
         Exit Sub
     End If
     
     Dim tmpRng As Excel.Range
     
-    anMsg "Reference Necessary Fields In ARreport"
+    anInfo "Reference Necessary Fields In ARreport"
     
     Dim ARreportHeaderRowNumber As Integer
     ARreportHeaderRowNumber = FirstDataRowNumberWithSomeAdjacentBoldCells(ARreport, Fix((ARreport.UsedRange.Columns.Count + 1) / 3))
@@ -395,6 +439,7 @@ Private Sub Command0_Click()
     ARreportLastRecordIndex = LastDataCellOfAColumn(ARreport.Columns(tmpRng.Find("ARID").Column), ARreport).Row
     
     Dim ARcol As New Collection
+    On Error GoTo FailedToParseHeaderFieldsInARreport
     ARcol.Add Item:=ARreport.Columns(tmpRng.Find("ARID").Column), _
                 Key:="ARID"
     ARcol.Add Item:=ARreport.Columns(tmpRng.Find("Problem statement").Column), _
@@ -417,8 +462,8 @@ Private Sub Command0_Click()
                 Key:="LastModDate"
     ARcol.Add Item:=ARreport.Columns(tmpRng.Find("Detailed description").Column), _
                 Key:="DetailedDescription"
-                
-    anMsg "Reference Necessary Fields In EngRvwList"
+    On Error GoTo 0
+    anInfo "Reference Necessary Fields In EngRvwList"
                 
     Dim EngRvwListHeaderRowNumber As Integer
     EngRvwListHeaderRowNumber = FirstDataRowNumberWithSomeAdjacentBoldCells(EngRvwList, Fix((EngRvwList.UsedRange.Columns.Count + 1) / 3))
@@ -435,10 +480,13 @@ Private Sub Command0_Click()
     EngRvwListLastRecordIndex = LastDataCellOfAColumn(EngRvwList.Columns(tmpRng.Find("AR Number").Column), EngRvwList).Row
     
     Dim ERcol As New Collection
+    On Error GoTo FailedToParseHeaderFieldsInEngRvwList
     ERcol.Add Item:=EngRvwList.Columns(tmpRng.Find("Rank").Column), _
                 Key:="Rank"
     ERcol.Add Item:=EngRvwList.Columns(tmpRng.Find("PRIME_PART").Column), _
-                Key:="PN"
+                Key:="PrimePartNumber"
+    ERcol.Add Item:=EngRvwList.Columns(tmpRng.Find("PART_DESCRIPTION").Column), _
+                Key:="PrimePartDescription"
     ERcol.Add Item:=EngRvwList.Columns(tmpRng.Find("12M DMD").Column), _
                 Key:="12MonthDemand"
     ERcol.Add Item:=EngRvwList.Columns(tmpRng.Find("Months of Supply").Column), _
@@ -447,8 +495,9 @@ Private Sub Command0_Click()
                 Key:="OnHandGood"
     ERcol.Add Item:=EngRvwList.Columns(tmpRng.Find("AR Number").Column), _
                 Key:="ARID"
+    On Error GoTo 0
     
-    anMsg "Update Tables: Persons AROwners ARApprovers ARs"
+    anInfo "Update Tables: Persons,AROwners,ARApprovers,ARs According To AR Report"
     
     Dim odcDB As DAO.Database
     Set odcDB = Application.CurrentDb
@@ -457,7 +506,7 @@ Private Sub Command0_Click()
     Dim scanRng As Excel.Range
     Dim tmpSplit() As String
     Dim tmpSqlValStr(1 To 5) As String
-    Dim TmpStr As String
+    Dim tmpStr As String
     Dim tmpStr1 As String
     Dim tmpStr2 As String
     Dim tmpStr3 As String
@@ -474,6 +523,7 @@ Private Sub Command0_Click()
     idStatus.Add Item:=tmpRs.Fields("ARStatusID").Value, Key:="Closure Requested"
     Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARStatus WHERE Status='Closed';", dbOpenSnapshot)
     idStatus.Add Item:=tmpRs.Fields("ARStatusID").Value, Key:="Closed"
+    idStatus.Add Item:="NULL", Key:=""
     On Error GoTo 0
     
     Dim tmpVar As Variant
@@ -490,8 +540,8 @@ Private Sub Command0_Click()
                         Array("HD", Array("HD"))))
                         
     Dim idType As New Collection
-    Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARTypes;", dbOpenSnapshot)
-    Do While Not tmpRs.EOF
+    Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARTypes WHERE Abbreviation IS NOT NULL AND Abbreviation<>'';", dbOpenSnapshot)
+    Do Until tmpRs.EOF
         idType.Add Item:=tmpRs.Fields("ARTypesID").Value, Key:=tmpRs.Fields("Abbreviation").Value
         tmpRs.MoveNext
     Loop
@@ -499,14 +549,7 @@ Private Sub Command0_Click()
         MsgBox "Table ARTypes Is Not Initialized With Basic Records"
         Exit Sub
     End If
-    
-    Dim idDefaultField As Integer
-    Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARFields WHERE Abbreviation='';", dbOpenSnapshot)
-    If tmpRs.EOF Then
-        MsgBox "Table ARFields Is Not Initialized With Basic Records"
-        Exit Sub
-    End If
-    idDefaultField = tmpRs!ARFieldsID
+    idType.Add Item:="NULL", Key:=""
     
     Set scanRng = ARcol.Item("ARID").Range("A" & ARreportFirstRecordIndex & ":A" & ARreportLastRecordIndex)
     
@@ -514,10 +557,15 @@ Private Sub Command0_Click()
         nowRowNum = tmpRng.Row
         If Trim(CStr(tmpRng.Value)) <> "" Then
             '=================================================================
-            'Update Table Persons Accordingly To ARreport.AROwner
-            tmpSplit = Split(Replace(CStr(ARcol.Item("AROwner").Range("A" & nowRowNum).Value), "'", "''") & " ", "(", , vbBinaryCompare)
+            'Update Table Persons According To ARreport.AROwner
+            tmpSplit = Split(CStr(ARcol.Item("AROwner").Range("A" & nowRowNum).Value) & " ", "(", , vbBinaryCompare)
             'Parse FullName
-            TmpStr = Trim(tmpSplit(0))
+            tmpStr = Trim(tmpSplit(0))
+            If tmpStr = "" Then
+                MsgBox "Notice: Missing AROwner At " & ARcol.Item("AROwner").Range("A" & nowRowNum).Address & " In AR Report"
+                GoTo ContinueToNextARID
+            End If
+            tmpStr = sqlVal(tmpStr, vbString)
             'Parse KTDomainUserName
             tmpStr1 = ""
             If UBound(tmpSplit) = 1 Then
@@ -528,14 +576,15 @@ Private Sub Command0_Click()
                     tmpStr1 = ""
                 End If
             End If
-            Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName='" & TmpStr & "';", dbOpenSnapshot)
+            tmpStr1 = sqlVal(tmpStr1, vbString)
+            Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             If tmpRs.EOF Then
-                odcDB.Execute "INSERT INTO Persons (FullName,KTDomainUserName,RecordLastModTime) VALUES ('" & TmpStr _
-                                & "','" & tmpStr1 & "',Now());", dbFailOnError
-                Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName='" & TmpStr & "';", dbOpenSnapshot)
+                odcDB.Execute "INSERT INTO Persons (FullName,KTDomainUserName,RecordLastModTime) VALUES (" & tmpStr _
+                                    & "," & tmpStr1 & ",Now());", dbFailOnError
+                Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             Else
-                odcDB.Execute "UPDATE Persons SET KTDomainUserName='" & tmpStr1 & "',RecordLastModTime=Now() WHERE FullName='" & TmpStr _
-                                & "' AND KTDomainUserName<>'" & tmpStr1 & "';", dbFailOnError
+                odcDB.Execute "UPDATE Persons SET KTDomainUserName=" & tmpStr1 & ",RecordLastModTime=Now() WHERE FullName=" & tmpStr _
+                                    & " AND (" & sqlNotEqExpr("KTDomainUserName", tmpStr1) & ");", dbFailOnError
             End If
             tmpInt = tmpRs!PersonsID
             'Update Table AROwners
@@ -547,10 +596,15 @@ Private Sub Command0_Click()
             'Save Current AROwnersID To Update Table ARs Later
             tmpInt1 = tmpRs!AROwnersID
             '=================================================================
-            'Update Table Persons Accordingly To ARreport.ARApprover
-            tmpSplit = Split(Replace(CStr(ARcol.Item("ARApprover").Range("A" & nowRowNum).Value), "'", "''") & " ", "(", , vbBinaryCompare)
+            'Update Table Persons According To ARreport.ARApprover
+            tmpSplit = Split(CStr(ARcol.Item("ARApprover").Range("A" & nowRowNum).Value) & " ", "(", , vbBinaryCompare)
             'Parse FullName
-            TmpStr = Trim(tmpSplit(0))
+            tmpStr = Trim(tmpSplit(0))
+            If tmpStr = "" Then
+                MsgBox "Notice: Missing ARApprover At " & ARcol.Item("ARApprover").Range("A" & nowRowNum).Address & " In AR Report"
+                GoTo ContinueToNextARID
+            End If
+            tmpStr = sqlVal(tmpStr, vbString)
             'Parse KTDomainUserName
             tmpStr1 = ""
             If UBound(tmpSplit) = 1 Then
@@ -561,14 +615,15 @@ Private Sub Command0_Click()
                     tmpStr1 = ""
                 End If
             End If
-            Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName='" & TmpStr & "';", dbOpenSnapshot)
+            tmpStr1 = sqlVal(tmpStr1, vbString)
+            Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             If tmpRs.EOF Then
-                odcDB.Execute "INSERT INTO Persons (FullName,KTDomainUserName,RecordLastModTime) VALUES ('" & TmpStr _
-                                & "','" & tmpStr1 & "',Now());", dbFailOnError
-                Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName='" & TmpStr & "';", dbOpenSnapshot)
+                odcDB.Execute "INSERT INTO Persons (FullName,KTDomainUserName,RecordLastModTime) VALUES (" & tmpStr _
+                                    & "," & tmpStr1 & ",Now());", dbFailOnError
+                Set tmpRs = odcDB.OpenRecordset("SELECT * FROM Persons WHERE FullName=" & tmpStr & ";", dbOpenSnapshot)
             Else
-                odcDB.Execute "UPDATE Persons SET KTDomainUserName='" & tmpStr1 & "',RecordLastModTime=Now() WHERE FullName='" & TmpStr _
-                                & "' AND KTDomainUserName<>'" & tmpStr1 & "';", dbFailOnError
+                odcDB.Execute "UPDATE Persons SET KTDomainUserName=" & tmpStr1 & ",RecordLastModTime=Now() WHERE FullName=" & tmpStr _
+                                    & " AND (" & sqlNotEqExpr("KTDomainUserName", tmpStr1) & ");", dbFailOnError
             End If
             tmpInt = tmpRs!PersonsID
             'Update Table ARApprovers
@@ -580,8 +635,8 @@ Private Sub Command0_Click()
             'Save Current ARApproversID To Update Table ARs Later
             tmpInt2 = tmpRs!ARApproversID
             '=================================================================
-            'Update Table ARs
-            TmpStr = Trim(CStr(tmpRng.Value))
+            'Update Table ARs According To ARreport
+            tmpStr = sqlVal(Trim(CStr(tmpRng.Value)), vbString)
             'Validate Date Extracted From ARreport
             tmpSqlValStr(1) = Trim(CStr(ARcol.Item("TargetDate").Range("A" & nowRowNum).Value))
             tmpSqlValStr(2) = Trim(CStr(ARcol.Item("LastActiveDate").Range("A" & nowRowNum).Value))
@@ -595,13 +650,13 @@ Private Sub Command0_Click()
                     tmpSqlValStr(tmpInt) = "#" & Left(tmpSqlValStr(tmpInt), InStr(1, tmpSqlValStr(tmpInt), " ", vbBinaryCompare) - 1) & "#"
                 End If
             Next
-            Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARs WHERE ARID='" & TmpStr & "';", dbOpenSnapshot)
+            Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARs WHERE ARID=" & tmpStr & ";", dbOpenSnapshot)
             If tmpRs.EOF Then
-                tmpStr1 = Replace(CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value), "'", "''")
-                odcDB.Execute "INSERT INTO ARs (ARID,ProblemStatement,AROwnersID,TargetDate,LastActiveDate,ARStatusID,ARApproversID,OpenDate,CloseDate,LastModDate,DetailedDescription,ARTypesID,ARFieldsID,RecordLastModTime) " _
-                                & "VALUES ('" & TmpStr _
-                                & "','" & tmpStr1 _
-                                & "'," & tmpInt1 _
+                tmpStr1 = sqlVal(CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value), vbString)
+                odcDB.Execute "INSERT INTO ARs (ARID,ProblemStatement,AROwnersID,TargetDate,LastActiveDate,ARStatusID,ARApproversID,OpenDate,CloseDate,LastModDate,DetailedDescription,ARTypesID,RecordLastModTime) " _
+                                & "VALUES (" & tmpStr _
+                                & "," & tmpStr1 _
+                                & "," & tmpInt1 _
                                 & "," & tmpSqlValStr(1) _
                                 & "," & tmpSqlValStr(2) _
                                 & "," & idStatus.Item(Trim(CStr(ARcol.Item("Status").Range("A" & nowRowNum).Value))) _
@@ -609,22 +664,21 @@ Private Sub Command0_Click()
                                 & "," & tmpSqlValStr(3) _
                                 & "," & tmpSqlValStr(4) _
                                 & "," & tmpSqlValStr(5) _
-                                & ",'" & Replace(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), "'", "''") _
-                                & "'," & idType.Item(Classify(tmpVar, tmpStr1, 1, vbTextCompare)) _
-                                & "," & idDefaultField _
+                                & "," & sqlVal(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), vbString) _
+                                & "," & idType.Item(Classify(tmpVar, tmpStr1, 1, vbTextCompare)) _
                                 & ",Now());", dbFailOnError
             Else
                 tmpStr1 = CStr(ARcol.Item("ProblemStatement").Range("A" & nowRowNum).Value)
                 If tmpStr1 <> tmpRs!ProblemStatement Then
                     odcDB.Execute "UPDATE ARs SET ARTypesID=" & idType.Item(Classify(tmpVar, tmpStr1, 1, vbTextCompare)) _
-                                    & " WHERE ARID='" & TmpStr & "';", dbFailOnError
+                                    & " WHERE ARID=" & tmpStr & ";", dbFailOnError
                 End If
-                tmpStr1 = Replace(tmpStr1, "'", "''")
+                tmpStr1 = sqlVal(tmpStr1, vbString)
                 tmpStr2 = Trim(CStr(ARcol.Item("Status").Range("A" & nowRowNum).Value))
-                tmpStr3 = Replace(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), "'", "''")
+                tmpStr3 = sqlVal(CStr(ARcol.Item("DetailedDescription").Range("A" & nowRowNum).Value), vbString)
                 odcDB.Execute "UPDATE ARs " _
-                                & "SET ProblemStatement='" & tmpStr1 _
-                                & "',AROwnersID=" & tmpInt1 _
+                                & "SET ProblemStatement=" & tmpStr1 _
+                                & ",AROwnersID=" & tmpInt1 _
                                 & ",TargetDate=" & tmpSqlValStr(1) _
                                 & ",LastActiveDate=" & tmpSqlValStr(2) _
                                 & ",ARStatusID=" & idStatus.Item(tmpStr2) _
@@ -632,28 +686,64 @@ Private Sub Command0_Click()
                                 & ",OpenDate=" & tmpSqlValStr(3) _
                                 & ",CloseDate=" & tmpSqlValStr(4) _
                                 & ",LastModDate=" & tmpSqlValStr(5) _
-                                & ",DetailedDescription='" & tmpStr3 _
-                                & "',RecordLastModTime=Now() " _
-                                & "WHERE ARID='" & TmpStr _
-                                & "' AND (ProblemStatement<>'" & tmpStr1 _
-                                & "' OR AROwnersID<>" & tmpInt1 _
-                                & " OR TargetDate<>" & tmpSqlValStr(1) _
-                                & " OR LastActiveDate<>" & tmpSqlValStr(2) _
-                                & " OR ARStatusID<>" & idStatus.Item(tmpStr2) _
-                                & " OR ARApproversID<>" & tmpInt2 _
-                                & " OR OpenDate<>" & tmpSqlValStr(3) _
-                                & " OR CloseDate<>" & tmpSqlValStr(4) _
-                                & " OR LastModDate<>" & tmpSqlValStr(5) _
-                                & " OR DetailedDescription<>'" & tmpStr3 _
-                                & "');", dbFailOnError
+                                & ",DetailedDescription=" & tmpStr3 _
+                                & ",RecordLastModTime=Now() " _
+                                & "WHERE ARID=" & tmpStr _
+                                & " AND (" & sqlNotEqExpr("ProblemStatement", tmpStr1) _
+                                & " OR " & sqlNotEqExpr("AROwnersID", CStr(tmpInt1)) _
+                                & " OR " & sqlNotEqExpr("TargetDate", tmpSqlValStr(1)) _
+                                & " OR " & sqlNotEqExpr("LastActiveDate", tmpSqlValStr(2)) _
+                                & " OR " & sqlNotEqExpr("ARStatusID", idStatus.Item(tmpStr2)) _
+                                & " OR " & sqlNotEqExpr("ARApproversID", CStr(tmpInt2)) _
+                                & " OR " & sqlNotEqExpr("OpenDate", tmpSqlValStr(3)) _
+                                & " OR " & sqlNotEqExpr("CloseDate", tmpSqlValStr(4)) _
+                                & " OR " & sqlNotEqExpr("LastModDate", tmpSqlValStr(5)) _
+                                & " OR " & sqlNotEqExpr("DetailedDescription", tmpStr3) _
+                                & ");", dbFailOnError
             End If
         Else
-            anMsg "Catch An Empty ARID Cell In AR Report, Row " & nowRowNum
+            MsgBox "Notice: Missing ARID At " & tmpRng.Address & " In AR Report"
         End If
+ContinueToNextARID:
     Next
-    anMsg "Update Tables: "
+    
+    anInfo "Update Tables ARs According To EngRvwList"
+    '=================================================================
+    'Update Table ARs According To EngRvwList
+    Set tmpRs = odcDB.OpenRecordset("SELECT * FROM ARs WHERE ARID IS NOT NULL AND ARID<>'';", dbOpenSnapshot)
+    Do Until tmpRs.EOF
+        tmpStr = tmpRs!ARID
+        Set tmpRng = ERcol.Item("ARID").Find(What:=tmpStr, LookIn:=xlValues, _
+                                                LookAt:=xlPart, SearchOrder:=xlByColumns, _
+                                                SearchDirection:=xlNext, _
+                                                MatchCase:=False)
+        If Not tmpRng Is Nothing Then
+            nowRowNum = tmpRng.Row
+            tmpStr1 = sqlVal(CStr(ERcol.Item("PrimePartNumber").Range("A" & nowRowNum).Value), vbString)
+            tmpStr2 = sqlVal(CStr(ERcol.Item("PrimePartDescription").Range("A" & nowRowNum).Value), vbString)
+            tmpSqlValStr(1) = sqlVal(Trim(CStr(ERcol.Item("Rank").Range("A" & nowRowNum).Value)), vbInteger)
+            tmpSqlValStr(2) = sqlVal(Trim(CStr(ERcol.Item("12MonthDemand").Range("A" & nowRowNum).Value)), vbInteger)
+            tmpSqlValStr(3) = sqlVal(Trim(CStr(ERcol.Item("MonthOfSupply").Range("A" & nowRowNum).Value)), vbSingle)
+            tmpSqlValStr(4) = sqlVal(Trim(CStr(ERcol.Item("OnHandGood").Range("A" & nowRowNum).Value)), vbInteger)
+            nowDbExecSQL "UPDATE ARs SET Rank=" & tmpSqlValStr(1) _
+                            & ",PrimePartNumber=" & tmpStr1 _
+                            & ",PrimePartDescription=" & tmpStr2 _
+                            & ",[12MonthDemand]=" & tmpSqlValStr(2) _
+                            & ",MonthOfSupply=" & tmpSqlValStr(3) _
+                            & ",OnHandGood=" & tmpSqlValStr(4) _
+                            & ",RecordLastModTime=Now() WHERE ARID=" & sqlVal(tmpStr, vbString) _
+                            & " AND (" & sqlNotEqExpr("Rank", tmpSqlValStr(1)) _
+                            & " OR " & sqlNotEqExpr("PrimePartNumber", tmpStr1) _
+                            & " OR " & sqlNotEqExpr("PrimePartDescription", tmpStr2) _
+                            & " OR " & sqlNotEqExpr("[12MonthDemand]", tmpSqlValStr(2)) _
+                            & " OR " & sqlNotEqExpr("MonthOfSupply", tmpSqlValStr(3)) _
+                            & " OR " & sqlNotEqExpr("OnHandGood", tmpSqlValStr(4)) _
+                            & ");", dbFailOnError
+        End If
+        tmpRs.MoveNext
+    Loop
         
-    anMsg "Finish Reading The 2 Source Excel Files"
+    anInfo "Finish Reading The 2 Source Excel Files"
     ARreportWB.Close SaveChanges:=False
     EngRvwListWB.Close SaveChanges:=False
     xlApp.Quit
@@ -669,7 +759,13 @@ UnableToOpenFileARReport:
     MsgBox "Unable To Open The File AR Report At" & Chr(10) & Chr(9) & ARreportFilePath
     Exit Sub
 UnableToOpenFileEngRvwList:
-    MsgBox "Unable To Open The File Eng Rvw List At" & Chr(10) & Chr(9) & EngRvwListFilePath
+    MsgBox "Unable To Open The File EngRvw List At" & Chr(10) & Chr(9) & EngRvwListFilePath
+    Exit Sub
+FailedToParseHeaderFieldsInARreport:
+    MsgBox "Unable To Parse The Header Fields In AR Report"
+    Exit Sub
+FailedToParseHeaderFieldsInEngRvwList:
+    MsgBox "Unable To Parse The Header Fields In EngRvw List"
     Exit Sub
 UninitializedTableARStatus:
     MsgBox "Table ARStatus Is Not Initialized With Three Basic Records" & Chr(10) & "'Open', 'Closure Requested', 'Closed'"
@@ -677,5 +773,5 @@ UninitializedTableARStatus:
 End Sub
 
 Private Sub Command1_Click()
-    
+    MsgBox sqlVal("", vbString)
 End Sub
