@@ -349,7 +349,7 @@ Public Function sqlVal(Value As Variant, Optional UserDefinedValueType As VbVarT
 End Function
 
 Public Function sqlNotEqExpr(Field As String, sqlValue As String) As String
-    sqlNotEqExpr = Field & " IS NULL OR " & Field & "<>" & sqlValue
+    sqlNotEqExpr = Field & IIf(sqlValue = "NULL", " IS NOT NULL", " IS NULL OR " & Field & "<>" & sqlValue)
 End Function
 
 
@@ -725,7 +725,7 @@ ContinueToNextARID:
             tmpSqlValStr(2) = sqlVal(Trim(CStr(ERcol.Item("12MonthDemand").Range("A" & nowRowNum).Value)), vbInteger)
             tmpSqlValStr(3) = sqlVal(Trim(CStr(ERcol.Item("MonthOfSupply").Range("A" & nowRowNum).Value)), vbSingle)
             tmpSqlValStr(4) = sqlVal(Trim(CStr(ERcol.Item("OnHandGood").Range("A" & nowRowNum).Value)), vbInteger)
-            nowDbExecSQL "UPDATE ARs SET Rank=" & tmpSqlValStr(1) _
+            odcDB.Execute "UPDATE ARs SET Rank=" & tmpSqlValStr(1) _
                             & ",PrimePartNumber=" & tmpStr1 _
                             & ",PrimePartDescription=" & tmpStr2 _
                             & ",[12MonthDemand]=" & tmpSqlValStr(2) _
