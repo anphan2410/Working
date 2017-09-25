@@ -1,0 +1,800 @@
+SerialPortWorkerProperty Constructed <-|1|SerialPortWorkerProperty::SerialPortWorkerProperty(QObject*)|serialportworkerproperty.cpp|7|138754640.000000|
+SerialPortWorkerProperty Initialized <-|1|void SerialPortWorkerProperty::initialize()|serialportworkerproperty.cpp|20|138884048.000000|
+requestSerialPortInfo Constructed <-|1|requestSerialPortInfo::requestSerialPortInfo(SerialPortWorkerProperty*, quint32, QState*)|requestserialportinfo.cpp|6|138855824.000000|
+validateSerialPortInfo Constructed <-|1|validateSerialPortInfo::validateSerialPortInfo(SerialPortWorkerProperty*, QState*)|validateserialportinfo.cpp|6|138973504.000000|
+connectSerialPort Constructed <-|1|connectSerialPort::connectSerialPort(SerialPortWorkerProperty*, QState*)|connectserialport.cpp|6|138861328.000000|
+writeBytes Constructed <-|1|writeBytes::writeBytes(SerialPortWorkerProperty*, quint16, QState*)|writebytes.cpp|6|139061840.000000|
+readBytes Constructed <-|1|readBytes::readBytes(SerialPortWorkerProperty*, quint16, QState*)|readbytes.cpp|6|138941968.000000|
+wait4ErrorHandler4SerialPortWorker Constructed <-|1|wait4ErrorHandler4SerialPortWorker::wait4ErrorHandler4SerialPortWorker(SerialPortWorkerProperty*, quint32)|wait4errorhandler4serialportworker.cpp|6|139085312.000000|
+SerialPortWorker Constructed <-|1|SerialPortWorker::SerialPortWorker()|serialportworker.cpp|44|139109504.000000|
+SerialPortWorkerProperty Constructed <-|1|SerialPortWorkerProperty::SerialPortWorkerProperty(QObject*)|serialportworkerproperty.cpp|7|139164864.000000|
+SerialPortWorkerProperty Initialized <-|1|void SerialPortWorkerProperty::initialize()|serialportworkerproperty.cpp|20|139187952.000000|
+requestSerialPortInfo Constructed <-|1|requestSerialPortInfo::requestSerialPortInfo(SerialPortWorkerProperty*, quint32, QState*)|requestserialportinfo.cpp|6|139143600.000000|
+validateSerialPortInfo Constructed <-|1|validateSerialPortInfo::validateSerialPortInfo(SerialPortWorkerProperty*, QState*)|validateserialportinfo.cpp|6|139264208.000000|
+connectSerialPort Constructed <-|1|connectSerialPort::connectSerialPort(SerialPortWorkerProperty*, QState*)|connectserialport.cpp|6|139150560.000000|
+writeBytes Constructed <-|1|writeBytes::writeBytes(SerialPortWorkerProperty*, quint16, QState*)|writebytes.cpp|6|139354016.000000|
+readBytes Constructed <-|1|readBytes::readBytes(SerialPortWorkerProperty*, quint16, QState*)|readbytes.cpp|6|139233776.000000|
+wait4ErrorHandler4SerialPortWorker Constructed <-|1|wait4ErrorHandler4SerialPortWorker::wait4ErrorHandler4SerialPortWorker(SerialPortWorkerProperty*, quint32)|wait4errorhandler4serialportworker.cpp|6|139376016.000000|
+SerialPortWorker Constructed <-|1|SerialPortWorker::SerialPortWorker()|serialportworker.cpp|44|139377120.000000|
+Construct Object <-|1|UHVPVICollectorDB::UHVPVICollectorDB(QObject*)|uhvpvicollectordb.cpp|5|139628960.000000|
+emitReadP Constructed <-|1|emitReadP::emitReadP(UHVPVICollectorDB*)|emitreadp.cpp|5|139567744.000000|
+wait4P Constructed <-|1|wait4P::wait4P(UHVPVICollectorDB*)|wait4p.cpp|5|139734912.000000|
+emitReadV Constructed <-|1|emitReadV::emitReadV(UHVPVICollectorDB*)|emitreadv.cpp|5|139626032.000000|
+wait4V Constructed <-|1|wait4V::wait4V(UHVPVICollectorDB*)|wait4v.cpp|5|139792832.000000|
+emitReadI Constructed <-|1|emitReadI::emitReadI(UHVPVICollectorDB*)|emitreadi.cpp|5|139633728.000000|
+wait4I Constructed <-|1|wait4I::wait4I(UHVPVICollectorDB*)|wait4i.cpp|5|139798688.000000|
+idleUHVPVICollector Constructed <-|1|idleUHVPVICollector::idleUHVPVICollector(UHVPVICollectorDB*)|idleuhvpvicollector.cpp|5|139734176.000000|
+UHVPVICollector Constructed <-|1|UHVPVICollector::UHVPVICollector(bool, QObject*)|uhvpvicollector.cpp|48|139811520.000000|
+Construct Object <-|1|UHVPVICollectorDB::UHVPVICollectorDB(QObject*)|uhvpvicollectordb.cpp|5|139871648.000000|
+emitReadP Constructed <-|1|emitReadP::emitReadP(UHVPVICollectorDB*)|emitreadp.cpp|5|139808960.000000|
+wait4P Constructed <-|1|wait4P::wait4P(UHVPVICollectorDB*)|wait4p.cpp|5|139974656.000000|
+emitReadV Constructed <-|1|emitReadV::emitReadV(UHVPVICollectorDB*)|emitreadv.cpp|5|139864672.000000|
+wait4V Constructed <-|1|wait4V::wait4V(UHVPVICollectorDB*)|wait4v.cpp|5|140062272.000000|
+emitReadI Constructed <-|1|emitReadI::emitReadI(UHVPVICollectorDB*)|emitreadi.cpp|5|139912336.000000|
+wait4I Constructed <-|1|wait4I::wait4I(UHVPVICollectorDB*)|wait4i.cpp|5|140078400.000000|
+idleUHVPVICollector Constructed <-|1|idleUHVPVICollector::idleUHVPVICollector(UHVPVICollectorDB*)|idleuhvpvicollector.cpp|5|140008384.000000|
+UHVPVICollector Constructed <-|1|UHVPVICollector::UHVPVICollector(bool, QObject*)|uhvpvicollector.cpp|48|140078032.000000|
+Object Constructed <-|1|BinaryProtocol::BinaryProtocol()|binaryprotocol.cpp|6|165275888.000000|
+Object Constructed <-|1|WindowProtocol::WindowProtocol()|windowprotocol.cpp|5|165458080.000000|
+piLocalDBWorkerVarSet Constructed <-|1|piLocalDBWorkerVarSet::piLocalDBWorkerVarSet(QObject*)|pilocaldbworkervarset.cpp|7|165817712.000000|
+connectDatabase Constructed <-|1|connectDatabase::connectDatabase(piLocalDBWorkerVarSet*, QState*)|connectdatabase.cpp|6|165632944.000000|
+updateLocalDatabase Constructed <-|1|updateLocalDatabase::updateLocalDatabase(piLocalDBWorkerVarSet*, QState*)|updatelocaldatabase.cpp|10|165915216.000000|
+updateOnlineDatabase Constructed <-|1|updateOnlineDatabase::updateOnlineDatabase(piLocalDBWorkerVarSet*, QState*)|updateonlinedatabase.cpp|23|165959216.000000|
+setIsSentColumnOnLocalDatabase Constructed <-|1|setIsSentColumnOnLocalDatabase::setIsSentColumnOnLocalDatabase(piLocalDBWorkerVarSet*, QState*)|setissentcolumnonlocaldatabase.cpp|6|165958848.000000|
+wait4ErrorHandler4piLocalDBWorker Constructed <-|1|wait4ErrorHandler4piLocalDBWorker::wait4ErrorHandler4piLocalDBWorker(piLocalDBWorkerVarSet*)|wait4errorhandler4pilocaldbworker.cpp|10|166068448.000000|
+piLocalDBWorker Constructed <-|1|piLocalDBWorker::piLocalDBWorker(QObject*)|pilocaldbworker.cpp|37|165910448.000000|
+Object Constructed <-|1|SmallCoordinatorDB::SmallCoordinatorDB(QObject*)|smallcoordinatordb.cpp|5|165832368.000000|
+wait4ReadyWorkers Constructed <-|1|wait4ReadyWorkers::wait4ReadyWorkers(QState*)|wait4readyworkers.cpp|5|165898352.000000|
+coordinateGlobalSignals Constructed <-|1|coordinateGlobalSignals::coordinateGlobalSignals(SmallCoordinatorDB*, QState*)|coordinateglobalsignals.cpp|15|165934656.000000|
+wait4ErrorHandler4SmallCoordinator Constructed <-|1|wait4ErrorHandler4SmallCoordinator::wait4ErrorHandler4SmallCoordinator(SmallCoordinatorDB*)|wait4errorhandler4smallcoordinator.cpp|10|166740048.000000|
+SmallCoordinator Constructed <-|1|SmallCoordinator::SmallCoordinator(QObject*)|smallcoordinator.cpp|36|165958480.000000|
+wait4ReadyWorkers Entered <-|2|virtual void wait4ReadyWorkers::onEntry(QEvent*)|wait4readyworkers.cpp|10|166830960.000000|
+Enter connectDatabase <-|3|virtual void connectDatabase::onEntry(QEvent*)|connectdatabase.cpp|11|168229856.000000|
+requestSerialPortInfo Entered <-|4|virtual void requestSerialPortInfo::onEntry(QEvent*)|requestserialportinfo.cpp|27|168728064.000000|
+requestSerialPortInfo Entered <-|5|virtual void requestSerialPortInfo::onEntry(QEvent*)|requestserialportinfo.cpp|27|169194720.000000|
+Enter idleUHVPVICollector <-|6|virtual void idleUHVPVICollector::onEntry(QEvent*)|idleuhvpvicollector.cpp|10|169662496.000000|
+=> UHVPVICollectorDB::readyToWork <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|166|169143408.000000|
+Enter idleUHVPVICollector <-|7|virtual void idleUHVPVICollector::onEntry(QEvent*)|idleuhvpvicollector.cpp|10|169795200.000000|
+   isUHV4PVICollectorReady = 1 <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|176|169180064.000000|
+=> UHVPVICollectorDB::readyToWork <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|166|169286000.000000|
+   isUHV2PVICollectorReady = 1 <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|171|169320096.000000|
+=> OK Local Database Connected ! <-|3|bool piLocalDBWorkerVarSet::connectLocalDatabase()|pilocaldbworkervarset.cpp|35|211854320.000000|
+Leave connectDatabase <-|3|virtual void connectDatabase::onExit(QEvent*)|connectdatabase.cpp|17|211790896.000000|
+=> piLocalDBWorkerVarSet::readyToWork <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|140|211737744.000000|
+   isPiLocalDBWorkerReady = 1 <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|144|211787232.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|212114960.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|212149792.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|1223729920.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|1223843200.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|1223878016.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|1224867456.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|1225007104.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|1225116800.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|1225158912.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|1225213568.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|2237381632.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|2237495040.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|2237530112.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|2238313984.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|2238429184.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|2238528000.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|2238568704.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|2238623488.000000|
+   Emit requestPortName <-|4|requestSerialPortInfo::requestSerialPortInfo(SerialPortWorkerProperty*, quint32, QState*)::<lambda()>|requestserialportinfo.cpp|15|3173261568.000000|
+   Emit requestPortName <-|5|requestSerialPortInfo::requestSerialPortInfo(SerialPortWorkerProperty*, quint32, QState*)::<lambda()>|requestserialportinfo.cpp|15|3173316352.000000|
+SerialPortWorker Receives A Signal <-|4|void SerialPortWorker::In(const GlobalSignal&)|serialportworker.cpp|49|3174353408.000000|
+SerialPortWorker Receives A Signal <-|5|void SerialPortWorker::In(const GlobalSignal&)|serialportworker.cpp|49|3174404352.000000|
+   replyPortName <-|4|void SerialPortWorker::In(const GlobalSignal&)|serialportworker.cpp|65|3174455552.000000|
+   replyPortName <-|5|void SerialPortWorker::In(const GlobalSignal&)|serialportworker.cpp|65|3174516480.000000|
+   PortName=COM3 <-|4|void SerialPortWorker::In(const GlobalSignal&)|serialportworker.cpp|70|3174538240.000000|
+   PortName=COM5 <-|5|void SerialPortWorker::In(const GlobalSignal&)|serialportworker.cpp|70|3174574336.000000|
+Leave requestSerialPortInfo <-|4|virtual void requestSerialPortInfo::onExit(QEvent*)|requestserialportinfo.cpp|34|3174625792.000000|
+Leave requestSerialPortInfo <-|5|virtual void requestSerialPortInfo::onExit(QEvent*)|requestserialportinfo.cpp|34|3174637568.000000|
+validateSerialPortInfo Entered <-|5|virtual void validateSerialPortInfo::onEntry(QEvent*)|validateserialportinfo.cpp|11|3174827264.000000|
+validateSerialPortInfo Entered <-|4|virtual void validateSerialPortInfo::onEntry(QEvent*)|validateserialportinfo.cpp|11|3174827776.000000|
+=> SerialPortInfo Validated ! <-|5|virtual void validateSerialPortInfo::onEntry(QEvent*)|validateserialportinfo.cpp|22|3193649920.000000|
+Leave validateSerialPortInfo <-|5|virtual void validateSerialPortInfo::onExit(QEvent*)|validateserialportinfo.cpp|29|3193772032.000000|
+=> SerialPortInfo Validated ! <-|4|virtual void validateSerialPortInfo::onEntry(QEvent*)|validateserialportinfo.cpp|22|3193779968.000000|
+connectSerialPort Entered <-|5|virtual void connectSerialPort::onEntry(QEvent*)|connectserialport.cpp|11|3193694720.000000|
+   SerialPort Configured ! <-|5|void SerialPortWorkerProperty::configSerialPort()|serialportworkerproperty.cpp|43|3193884416.000000|
+Leave validateSerialPortInfo <-|4|virtual void validateSerialPortInfo::onExit(QEvent*)|validateserialportinfo.cpp|29|3193902848.000000|
+connectSerialPort Entered <-|4|virtual void connectSerialPort::onEntry(QEvent*)|connectserialport.cpp|11|3193842944.000000|
+   SerialPort Configured ! <-|4|void SerialPortWorkerProperty::configSerialPort()|serialportworkerproperty.cpp|43|3194021632.000000|
+=> SerialPort Opened ! <-|4|virtual void connectSerialPort::onEntry(QEvent*)|connectserialport.cpp|20|3194919680.000000|
+=> SerialPort Opened ! <-|5|virtual void connectSerialPort::onEntry(QEvent*)|connectserialport.cpp|20|3194955264.000000|
+=> SerialPortWorkerProperty::readyToWork <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|150|3194701568.000000|
+Leave connectSerialPort <-|4|virtual void connectSerialPort::onExit(QEvent*)|connectserialport.cpp|40|3195073024.000000|
+Leave connectSerialPort <-|5|virtual void connectSerialPort::onExit(QEvent*)|connectserialport.cpp|40|3195078400.000000|
+   isUHV2WorkerReady = 1 <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|155|3194806528.000000|
+writeBytes Entered <-|5|virtual void writeBytes::onEntry(QEvent*)|writebytes.cpp|11|3195356672.000000|
+writeBytes Entered <-|4|virtual void writeBytes::onEntry(QEvent*)|writebytes.cpp|11|3195356672.000000|
+=> SerialPortWorkerProperty::readyToWork <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|150|3194862592.000000|
+   Buffer Is Empty ! <-|5|virtual void writeBytes::onEntry(QEvent*)|writebytes.cpp|33|3195440384.000000|
+   isUHV4WorkerReady = 1 <-|2|void SmallCoordinatorDB::In(const GlobalSignal&)|smallcoordinatordb.cpp|160|3194929664.000000|
+   Buffer Is Empty ! <-|4|virtual void writeBytes::onEntry(QEvent*)|writebytes.cpp|33|3195473920.000000|
+=> All Workers Is Ready ! <-|2|void SmallCoordinatorDB::checkIfAllWorkersReady()|smallcoordinatordb.cpp|106|3194971136.000000|
+Leave wait4ReadyWorkers <-|2|virtual void wait4ReadyWorkers::onExit(QEvent*)|wait4readyworkers.cpp|15|3195075840.000000|
+coordinateGlobalSignals Entered <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|20|3195111424.000000|
+   Buffer Is Empty <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|30|3195151104.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|3251237632.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|3251329024.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|3251347712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|3251955456.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|3252047104.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|3252120832.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|3252146432.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|3252259072.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|4265390592.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|4265499136.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|4265533952.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|4266297856.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|4266414080.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|4266515712.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|4266556416.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|4266610688.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|5279211520.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|5279303168.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|5279321600.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|5279905792.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|5279996416.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|5280069632.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|5280096256.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|5280137216.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|6293235712.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|6293345792.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|6293410304.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|6294318080.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|6294428672.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|6294535680.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|6294580736.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|6294638080.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|7307369472.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|7307482624.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|7307516928.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|7308288000.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|7308403712.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|7308502016.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|7308542976.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|7308603904.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|8321205248.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|8321305600.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|8321331200.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|8321937408.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|8322040320.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|8322124288.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|8322157056.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|8322203648.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|9335250944.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|9335364608.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|9335401472.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|9336166400.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|9336283136.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|9336379392.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|9336419328.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|9336474624.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|10349297664.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|10349413376.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|10349447168.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|10350217216.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|10350334976.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|10350430208.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|10350470144.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|10350524416.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|11363038208.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|11363137536.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|11363164160.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|11363792896.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|11363901440.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|11363983360.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|11364016128.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|11364070400.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|12377211904.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|12377328640.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|12377364480.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|12378130432.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|12378250240.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|12378345472.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|12378385408.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|12378439680.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|13391068160.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|13391178752.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|13391338496.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|13392062464.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|13392185344.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|13392314368.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|13392353280.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|13392402432.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|14401547264.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|14401654784.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|14401680384.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|14402330624.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|14402436096.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|14402519040.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|14402551808.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|14402598912.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|15415336960.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|15415441408.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|15415468032.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|15416089600.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|15416194048.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|15416276992.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|15416309760.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|15416365056.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|16429460480.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|16429581312.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|16429615104.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|16430350336.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|16430469120.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|16430565376.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|16430606336.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|16430660608.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|17443610624.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|17443729408.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|17443766272.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|17444534272.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|17444653056.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|17444747264.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|17444790272.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|17444845568.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|18457380864.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|18457479168.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|18457505792.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|18458105856.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|18458200064.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|18458284032.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|18458316800.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|18458363904.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|19469694976.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|19469799424.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|19469826048.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|19470479360.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|19470565376.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|19470643200.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|19470675968.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|19470811136.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|20482064384.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|20482164736.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|20482191360.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|20482766848.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|20482854912.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|20482938880.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|20482971648.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|20483018752.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|21496170496.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|21496274944.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|21496344576.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|21497077760.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|21497208832.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|21497335808.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|21497376768.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|21497460736.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|22510221312.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|22510338048.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|22510372864.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|22511134720.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|22511253504.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|22511349760.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|22511390720.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|22511446016.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|23524052992.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|23524167680.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|23524202496.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|23524847616.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|23524950016.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|23525044224.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|23525085184.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|23525146624.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|24536686592.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|24536803328.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|24536836096.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|24537604096.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|24537722880.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|24537819136.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|24537860096.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|24537915392.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|25566050304.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|25566160896.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|25566195712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|25566840832.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|25566943232.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|25567039488.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|25567080448.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|25567135744.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|26568525824.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|26568642560.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|26568679424.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|26569439232.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|26569558016.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|26569660416.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|26569703424.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|26569758720.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|27582558208.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|27582674944.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|27582709760.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|27583451136.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|27583571968.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|27583666176.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|27583707136.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|27583770624.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|28596379648.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|28596436992.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|28596436992.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|28596828160.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|28596883456.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|28596926464.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|28596934656.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|28596957184.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|29610168320.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|29610231808.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|29610227712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|29610584064.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|29610637312.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|29610678272.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|29610686464.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|29610711040.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|30623031296.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|30623148032.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|30623180800.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|30623901696.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|30624020480.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|30624118784.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|30624159744.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|30624212992.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|31636733952.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|31636828160.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|31636846592.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|31637463040.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|31637557248.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|31637630976.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|31637661696.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|31637714944.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|32650739712.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|32650848256.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|32650885120.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|32651517952.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|32651618304.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|32651714560.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|32651757568.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|32651812864.000000|
+Leave coordinateGlobalSignals <-|2|virtual void coordinateGlobalSignals::onExit(QEvent*)|coordinateglobalsignals.cpp|37|33195933696.000000|
+coordinateGlobalSignals Entered <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|20|33196054528.000000|
+Leave coordinateGlobalSignals <-|2|virtual void coordinateGlobalSignals::onExit(QEvent*)|coordinateglobalsignals.cpp|37|33196187648.000000|
+coordinateGlobalSignals Entered <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|20|33196249088.000000|
+   Buffer Is Empty <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|30|33196296192.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|33664501760.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|33664565248.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|33664565248.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|33664985088.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|33665044480.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|33665091584.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|33665101824.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|33665128448.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|34678800384.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|34678919168.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|34678951936.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|34679713792.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|34679832576.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|34679930880.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|34679971840.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|34680025088.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|35692654592.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|35692769280.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|35692797952.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|35693432832.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|35693535232.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|35693617152.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|35693649920.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|35693694976.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|36706754560.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|36706856960.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|36706881536.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|36707561472.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|36707663872.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|36707745792.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|36707778560.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|36707827712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|37720682496.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|37720776704.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|37720793088.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|37721325568.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|37721415680.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|37721505792.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|37721534464.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|37721579520.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|38733176832.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|38733299712.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|38733336576.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|38734135296.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|38734254080.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|38734348288.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|38734389248.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|38734446592.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|39761149952.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|39761276928.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|39761313792.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|39762087936.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|39762206720.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|39762305024.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|39762345984.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|39762399232.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|40775114752.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|40775233536.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|40775270400.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|40776032256.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|40776151040.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|40776249344.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|40776290304.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|40776343552.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|41789042688.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|41789161472.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|41789198336.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|41789964288.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|41790083072.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|41790181376.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|41790222336.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|41790275584.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|42803126272.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|42804088832.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|42804154368.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|42804928512.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|42805047296.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|42805141504.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|42805182464.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|42805239808.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|43816849408.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|43816927232.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|43816931328.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|43817414656.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|43817488384.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|43817541632.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|43817558016.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|43817586688.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|44831600640.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|44831719424.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|44831756288.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|44832534528.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|44832653312.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|44832751616.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|44832792576.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|44832845824.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|45845045248.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|45845168128.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|45845200896.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|45845975040.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|45846093824.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|45846188032.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|45846228992.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|45846286336.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|46858657792.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|46858739712.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|46858743808.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|46859190272.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|46859255808.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|46859309056.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|46859325440.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|46859358208.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|47872872448.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|47872983040.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|47873011712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|47873687552.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|47873794048.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|47873875968.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|47873912832.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|47873957888.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|48886730752.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|48886796288.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|48886804480.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|48887410688.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|48887603200.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|48887685120.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|48887697408.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|48887767040.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|49901027328.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|49901142016.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|49901182976.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|49901965312.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|49902084096.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|49902182400.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|49902223360.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|49902276608.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|50914959360.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|50915074048.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|50915110912.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|50915876864.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|50915995648.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|50916089856.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|50916130816.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|50916184064.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|51928944640.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|51929067520.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|51929104384.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|51929845760.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|51929964544.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|51930066944.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|51930107904.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|51930165248.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|52942876672.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|52942995456.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|52943032320.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|52943769600.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|52943888384.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|52943986688.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|52944027648.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|52944080896.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|53956698112.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|53956796416.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|53956820992.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|53957394432.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|53957488640.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|53957570560.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|53957607424.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|53957652480.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|54970892288.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|54971015168.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|54971052032.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|54971817984.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|54971936768.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|54972030976.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|54972071936.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|54972129280.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|55984750592.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|55984865280.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|55984902144.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|55985594368.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|55985758208.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|55985872896.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|55985917952.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|55986028544.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|56998809600.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|56998912000.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|56998940672.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|56999616512.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|56999718912.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|56999804928.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|56999837696.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|56999882752.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|58012803072.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|58012917760.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|58012954624.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|58013720576.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|58013839360.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|58013937664.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|58013978624.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|58014031872.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|59026817024.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|59026935808.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|59026972672.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|59027742720.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|59027861504.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|59027955712.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|59027996672.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|59028049920.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|60040581120.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|60040679424.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|60040785920.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|60041363456.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|60041449472.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|60041531392.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|60041564160.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|60041609216.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|61054836736.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|61054951424.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|61054988288.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|61055754240.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|61055873024.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|61055967232.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|61056008192.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|61056065536.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|62068580352.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|62068686848.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|62068711424.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|62069354496.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|62069460992.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|62069542912.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|62069575680.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|62069620736.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|63082688512.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|63082795008.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|63082819584.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|63083499520.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|63083601920.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|63083687936.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|63083716608.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|63083769856.000000|
+Leave coordinateGlobalSignals <-|2|virtual void coordinateGlobalSignals::onExit(QEvent*)|coordinateglobalsignals.cpp|37|63222263808.000000|
+coordinateGlobalSignals Entered <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|20|63222370304.000000|
+Leave coordinateGlobalSignals <-|2|virtual void coordinateGlobalSignals::onExit(QEvent*)|coordinateglobalsignals.cpp|37|63222472704.000000|
+coordinateGlobalSignals Entered <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|20|63222521856.000000|
+   Buffer Is Empty <-|2|virtual void coordinateGlobalSignals::onEntry(QEvent*)|coordinateglobalsignals.cpp|30|63222562816.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|64096645120.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|64096763904.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|64096796672.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|64097476608.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|64097595392.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|64097693696.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|64097738752.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|64097796096.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|65110716416.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|65110839296.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|65110872064.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|65111617536.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|65111736320.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|65111830528.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|65111871488.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|65111928832.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|66124685312.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|66124804096.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|66124840960.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|66125615104.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|66125733888.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|66125832192.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|66125873152.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|66125926400.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|67138633728.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|67138736128.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|67138768896.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|67139448832.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|67139555328.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|67139637248.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|67139670016.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|67139715072.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|68152664064.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|68152786944.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|68152819712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|68153585664.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|68153704448.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|68153802752.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|68153839616.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|68153896960.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|69166645248.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|69166751744.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|69166776320.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|69167448064.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|69167554560.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|69167636480.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|69167669248.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|69167710208.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|70180577280.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|70180683776.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|70180716544.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|70181421056.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|70181552128.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|70181658624.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|70181699584.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|70181855232.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|71193026560.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|71193149440.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|71193190400.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|71193960448.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|71194083328.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|71194181632.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|71194214400.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|71194271744.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|72206934016.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|72207048704.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|72207089664.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|72207843328.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|72207966208.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|72208064512.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|72208105472.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|72208154624.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|73220923392.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|73221029888.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|73221079040.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|73221758976.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|73221865472.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|73221947392.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|73221980160.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|73222029312.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|74234847232.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|74234929152.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|74234937344.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|74235445248.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|74235518976.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|74235584512.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|74235600896.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|74235633664.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|75249393664.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|75249516544.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|75249557504.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|75250352128.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|75250475008.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|75250573312.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|75250614272.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|75250671616.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|76262858752.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|76262981632.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|76263014400.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|76263710720.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|76263833600.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|76263923712.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|76263964672.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|76264022016.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|77276684288.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|77276749824.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|77276905472.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|77277323264.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|77277388800.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|77277429760.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|77277437952.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|77277462528.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|78290845696.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|78290968576.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|78291001344.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|78291755008.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|78291869696.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|78291968000.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|78292008960.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|78292066304.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|79305039872.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|79305170944.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|79305211904.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|79305973760.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|79306096640.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|79306194944.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|79306235904.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|79306285056.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|80318906368.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|80319012864.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|80319037440.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|80319651840.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|80319758336.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|80319840256.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|80319873024.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|80319922176.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|81333207040.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|81333329920.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|81333518336.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|81334312960.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|81334435840.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|81334534144.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|81334583296.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|81334632448.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|82346606592.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|82346672128.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|82346672128.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|82347114496.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|82347188224.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|82347294720.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|82347319296.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|82347352064.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|83360866304.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|83360997376.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|83361038336.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|83361800192.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|83361923072.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|83362021376.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|83362062336.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|83362111488.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|84374872064.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|84374994944.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|84375027712.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|84375789568.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|84375912448.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|84376010752.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|84376051712.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|84376100864.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|85388771328.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|85388886016.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|85388926976.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|85389705216.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|85389828096.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|85389918208.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|85389959168.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|85390016512.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|86402662400.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|86402777088.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|86402809856.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|86403497984.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|86403596288.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|86403694592.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|86403735552.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|86403792896.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|87416766464.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|87416897536.000000|
+checkControlTable <-|3|void piLocalDBWorkerVarSet::updateLocalDatabase()|pilocaldbworkervarset.cpp|305|87416938496.000000|
+Leave updateLocalDatabase <-|3|virtual void updateLocalDatabase::onExit(QEvent*)|updatelocaldatabase.cpp|32|87417683968.000000|
+Enter updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onEntry(QEvent*)|updateonlinedatabase.cpp|28|87417798656.000000|
+Leave updateOnlineDatabase <-|3|virtual void updateOnlineDatabase::onExit(QEvent*)|updateonlinedatabase.cpp|42|87417896960.000000|
+Enter updateLocalDatabase <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|15|87417937920.000000|
+   Buffer Is Empty <-|3|virtual void updateLocalDatabase::onEntry(QEvent*)|updatelocaldatabase.cpp|26|87417995264.000000|
